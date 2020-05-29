@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+:root {
+    --color: 44, 43, 51;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(var(--color));
+}
+
+.input-container {
+    user-select: none;
+    max-width: 280px;
+}
+
+.input-container label {
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.input-container img {
+    border-radius: 2px;
+}
+
+.input-container span {
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(var(--color), .75);
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+    border-radius: 5px;
+    border: 1px solid rgba(var(--color), .25);
+    transition: border-color .25s;
+}
+
+.input :hover {
+    cursor: pointer;
+    border-color: var(--color);
+}
+
+.input .content, .input-option {
+    margin-left: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.input .content span, .input-option span {
+    margin-left: 8px;
+}
+
+.input .content span.selected {
+    font-weight: 700;
+    color: rgb(var(--color));
+}
+
+.input i {
+    margin: 16px;
+    transition: transform .5s;
+}
+
+.input-container .focus .input i {
+    transform: rotateX(180deg);
+}
+
+.input-container:not(.focus) .input-options {
+    display: none;
+}
+
+.input-options {
+    margin-top: 8px;
+    max-height: 200px;
+    overflow: auto;
+    border-radius: 5px;
+    border: 1px solid rgb(var(--color));
+    
+    /*For Firefox*/
+    /* scrollbar-color: rgb(var(--color)) transparent;
+    scrollbar-width: thin; */
+}
+
+.input-options::-webkit-scrollbar {
+    background: transparent;
+    width: 6px;
+}
+
+.input-options::-webkit-scrollbar-thumb {
+    background: rgb(var(--color));
+    border-radius: 3px;
+}
+
+.input-options::-webkit-scrollbar-thumb:hover {
+    background: rgba(var(--color), .75);
+}
+
+.input-option {
+    margin: 0;
+    padding: 16px;
+    transition: background .25s;
+}
+
+.input-option:hover {
+    cursor: pointer;
+    background: rgba(var(--color), .1);
+}
+
+.input-option:not(:last-child) {
+    border-bottom: 1px solid rgba(var(--color), .1);
+}
